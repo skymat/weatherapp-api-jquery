@@ -17,14 +17,29 @@ $("document").ready(function() {
     
 });
 
+// En utilisant ajax
+/*
  $("a").click(function(event){ 
      $(this).parent().fadeOut(function(){
         $.get( $(this).attr("href"), function( data ) {
         });
-     });
-
-    
+     });  
  });
+ */
+
+
+var deleteCity = false;
+$("a").click(function(event){ 
+        if (deleteCity == false)
+        {
+            event.preventDefault();
+            deleteCity = true;
+            $(this).parent().fadeOut(function(){
+                $(this).find(".glyphicon-remove-circle").trigger("click");
+            }); 
+        } 
+ });
+
 
 
 })
